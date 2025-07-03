@@ -11,11 +11,15 @@
     <meta name="robots" content="noindex, nofollow">
 </head>
 
-<body>
+<body class="w-screen">
+    <div id="headerNavBar"></div>
 
+    <script>
+        fetch('partials/headerNavBar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('headerNavBar').innerHTML = html;
+            });
+    </script>
 </body>
-
-<footer>
-
-</footer>
 </html>
