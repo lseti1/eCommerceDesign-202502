@@ -19,6 +19,22 @@
             .then(res => res.text())
             .then(html => {
                 document.getElementById('headerNavBar').innerHTML = html;
+
+                const currentPath = window.location.pathname;
+                console.log(currentPath);
+                const navBar = document.querySelector('#navBarItems')
+
+                for (const child of navBar.children) {
+                    const link = child.querySelector('a');
+                    // console.log(link.getAttribute('href'));
+                    if (link.getAttribute('href') == currentPath) {
+                        console.log("Match at link:", link);
+                        link.classList.add("text-red-500");
+                    }
+                    else {
+                        link.classList.remove("text-red-500");
+                    }
+                }
             });
     </script>
 </body>
