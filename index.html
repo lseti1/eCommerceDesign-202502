@@ -102,6 +102,7 @@
             </div>
         </div>
     </div>
+    <div id="signup"></div>
     <div id="footer"></div>
 
     
@@ -132,6 +133,12 @@
             .then(res => res.text())
             .then(html => {
                 document.getElementById('footer').innerHTML = html;
+            });
+
+        fetch('partials/signup.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('signup').innerHTML = html;
             });
     </script>
 </body>
