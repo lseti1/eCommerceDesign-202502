@@ -20,7 +20,7 @@
             Studio Session Here</button>
     </div>
     <div class="w-full px-[20%] py-4">
-        <h1 class="text-4xl font-bold tracking-tighter">Featured Products:</h1>
+        <h1 class="text-5xl font-bold tracking-tighter">Featured Products:</h1>
         <div class="grid grid-cols-5 text-center py-4 gap-2">
             <div class="bg-white border object-center overflow-hidden p-2">
                 <a class="" href="">
@@ -123,10 +123,14 @@
             </div>
         </div>
     </div>
-    <div class="w-full px-[20%] py-10 bg-black  overflow-hidden">
-        <h1 class="text-white text-4xl font-bold tracking-tighter pt-4">Blogs & Resources</h1>
-        <div class="text-white text-3xl font-bold">
-            <button id="prev" class="text-white/50 pointer-events-none">&lt</button>
+    <div class="w-full relative">
+        <img src="/images/SALE Banner.png"/>
+        <a href="/Sale/index.html" class="absolute bottom-[20%] left-[43%] text-white text-center text-xl font-semibold bg-black/70 hover:bg-black/80 py-4 px-4 rounded border-2 border-gray-400 z-20 w-[14%] duration-300">Shop Sale Items</a>
+    </div>
+    <div class="w-full px-[20%] py-10 bg-gray-100 text-black overflow-hidden">
+        <h1 class="text-5xl font-bold tracking-tighter">Blogs & Resources</h1>
+        <div class="text-3xl font-bold">
+            <button id="prev" class="text-black/50 pointer-events-none">&lt</button>
             <button id="next" class="">&gt</button>
         </div>
         <div class="overflow-hidden">
@@ -231,15 +235,15 @@
             console.log(translateAmount);
 
             if (translateAmount < 0) {
-                prevButton.classList.remove("text-white/50", "pointer-events-none");
+                prevButton.classList.remove("text-black/50", "pointer-events-none");
             } else {
-                prevButton.classList.add("text-white/50", "pointer-events-none");
+                prevButton.classList.add("text-black/50", "pointer-events-none");
             }
 
             if (translateAmount > -60) {
-                nextButton.classList.remove("text-white/50", "pointer-events-none");
+                nextButton.classList.remove("text-black/50", "pointer-events-none");
             } else {
-                nextButton.classList.add("text-white/50", "pointer-events-none");
+                nextButton.classList.add("text-black/50", "pointer-events-none");
             }
         }
 
