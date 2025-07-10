@@ -16,8 +16,166 @@
     <div>
         <img src="/images/SaleBanner2.png"/>
     </div>
+    <div class="w-full px-[20%] py-4 bg-white">
+        <div class="w-full grid grid-cols-5 px-2">
+            <h1 class="font-semibold ">Filters/Categories</h1>
+            <h1 id="productCount" class="font-semibold col-span-3"></h1>
+            <div class="flex flex-row gap-4 justify-end"> 
+                <h1 class="font-semibold">Sort By:</h1>
+                <select class="w-[50%] bg-gray-100 rounded border px-1">
+                    <option>Relevant</option>
+                    <option>Sale</option>
+                    <option>Price: Lowest to Highest</option>
+                    <option>Price: Highest to Lowest</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="w-full px-[20%] py-4">
+        <div class="w-full grid grid-cols-5">
+            <div id="dropdownContainer" class="flex flex-col gap-5">
+                <div class="dropdown pr-4 w-full">
+                    <div class="bg-white py-4 flex flex-col px-2 py-1">   
+                        <button class="dropdownButton flex flex-row justify-between">
+                            <p class="font-semibold tracking-tighter">Price Range</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-black duration-500" fill="none"  stroke="currentColor" stroke-width="1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="dropdownOptions flex flex-col justify-start max-h-0 overflow-hidden transition-all duration-700 ease-in-out ">
+                            <button class="font-light mr-auto">Range 1</button>
+                            <button class="font-light mr-auto">Range 2</button>
+                            <button class="font-light mr-auto">Range 3</button>
+                            <button class="font-light mr-auto">Range 4</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown pr-4 w-full">
+                    <div class="bg-white py-4 flex flex-col px-2 py-1">   
+                        <button class="dropdownButton flex flex-row justify-between">
+                            <p class="font-semibold tracking-tighter">In Stock</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-black duration-500" fill="none"  stroke="currentColor" stroke-width="1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="dropdownOptions flex flex-col justify-start max-h-0 overflow-hidden transition-all duration-700 ease-in-out ">
+                            <button class="font-light mr-auto">Location 1 (300)</button>
+                            <button class="font-light mr-auto">Location 2 (64)</button>
+                            <button class="font-light mr-auto">Location 3 (53)</button>
+                            <button class="font-light mr-auto">Location 4 (23)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown pr-4 w-full">
+                    <div class="bg-white py-4 flex flex-col px-2 py-1">   
+                        <button class="dropdownButton flex flex-row justify-between">
+                            <p class="font-semibold tracking-tighter">Brand</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-black duration-500" fill="none"  stroke="currentColor" stroke-width="1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="dropdownOptions flex flex-col justify-start max-h-0 overflow-hidden transition-all duration-700 ease-in-out ">
+                            <button class="font-light mr-auto">Brand 1</button>
+                            <button class="font-light mr-auto">Brand 2</button>
+                            <button class="font-light mr-auto">Brand 3</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown pr-4 w-full">
+                    <div class="bg-white py-4 flex flex-col px-2 py-1">   
+                        <button class="dropdownButton flex flex-row justify-between">
+                            <p class="font-semibold tracking-tighter">Type</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-black duration-500" fill="none"  stroke="currentColor" stroke-width="1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="dropdownOptions flex flex-col justify-start max-h-0 overflow-hidden transition-all duration-700 ease-in-out ">
+                            <button class="font-light mr-auto">Drums</button>
+                            <button class="font-light mr-auto">Guitars</button>
+                            <button class="font-light mr-auto">Bass</button>
+                            <button class="font-light mr-auto">Pianos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="products" class="grid col-span-4 grid-cols-4 gap-2">
+                <div class="bg-white border object-center overflow-hidden px-4 py-2 text-center">
+                    <div class="flex justify-center items-center overflow-hidden h-[250px]">
+                        <img class="object-contain mx-auto scale-[1] " src="/images/Prophet 5.jpg"/>
+                    </div>
+                    <p class="text-lg font-semibold tracking-tighter leading-tight">Dave Smith Prophet 5 - 8 voice</p>
+                    <p class="text-gray-400 py-4">DSP-58V</p>
+                    <p class="text-lg font-bold text-red-500">17% Off</p>
+                    <p class="text-3xl font-bold tracking-tighter pb-4">$2000 <s class="text-gray-300">$2400</s></p>
+                    
+                    <button class="w-full bg-black rounded py-2 text-white hover:bg-black/70 duration-300">Add To Cart</button>
+                </div>
+                <div class="bg-white border object-center overflow-hidden px-4 py-2 text-center">
+                    <div class="flex justify-center items-center overflow-hidden h-[250px]">
+                        <img class="object-contain my-auto scale-[1]" src="/images/Black Beauty 14x8.jpg"/>
+                    </div>
+                    <p class="text-lg font-semibold tracking-tighter leading-tight">Ludwig Black Beauty 14" x 8" Brass Snare Drum</p>
+                    <p class="text-gray-400 py-4">LWBB-148</p>
+                    <p class="text-lg font-bold text-red-500">24% Off</p>
+                    <p class="text-3xl font-bold tracking-tighter pb-4">$490 <s class="text-gray-300">$650</s></p>
+                    <button class="w-full bg-black rounded py-2 text-white hover:bg-black/70 duration-300">Add To Cart</button>
+                </div>
+                <div class="bg-white border object-center overflow-hidden px-4 py-2 text-center">
+                    <div class="flex justify-center items-center overflow-hidden h-[250px]">
+                        <img class="object-contain mx-auto scale-[1] " src="/images/Fender Jazzmaster.webp"/>
+                    </div>
+                    <p class="text-lg font-semibold tracking-tighter leading-tight">Fender Player Series Jazzmaster - Sunburst</p>
+                    <p class="text-gray-400 py-4">FPS-JSB</p>
+                    <p class="text-lg font-bold text-red-500">20% Off</p>
+                    <p class="text-3xl font-bold tracking-tighter pb-4">$640 <s class="text-gray-300">$800</s></p>
+                    <button class="w-full bg-black rounded py-2 text-white hover:bg-black/70 duration-300">Add To Cart</button>
+                </div>
+                <div class="bg-white border object-center overflow-hidden px-4 py-2 text-center">
+                    <div class="flex justify-center items-center overflow-hidden h-[250px]">
+                        <img class="object-contain mx-auto scale-[1] " src="/images/Fender P-Bass.jpg"/>
+                    </div>
+                    <p class="text-lg font-semibold tracking-tighter leading-tight">Fender Player Precision Bass - Red</p>
+                    <p class="text-gray-400 py-4">FPB-R</p>
+                    <p class="text-lg font-bold text-red-500">50% Off</p>
+                    <p class="text-3xl font-bold tracking-tighter pb-4">$250 <s class="text-gray-300">$500</s></p>
+                    <button class="w-full bg-black rounded py-2 text-white hover:bg-black/70 duration-300">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="w-full">
+            <div class="flex flex-row justify-end py-4">
+                <button class="px-2 text-2xl font-light bg-white rounded-l hover:bg-gray-200 duration-300 border">&lt;</button>
+                <button class="px-3 py-1 bg-red-600 text-white border">1</button>
+                <button class="px-2 text-2xl font-light bg-white rounded-r hover:bg-gray-200 duration-300 border">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <div id="signup"></div>
+    <div id="footer"></div>
 
     <script>
+        const dropdowns = document.getElementById("dropdownContainer");
+
+        dropdowns.querySelectorAll('.dropdown').forEach(dropdown => {
+            const dropdownButton = dropdown.querySelector(".dropdownButton");
+            const dropdownIcon = dropdownButton.querySelector('svg');
+            const dropdownOptions = dropdown.querySelector(".dropdownOptions");
+            let dropdownIsActive = false;
+
+            dropdownButton.addEventListener('click', () => {
+                dropdownIsActive = !dropdownIsActive;
+
+                dropdownIcon.classList.toggle("rotate-180", dropdownIsActive);
+                dropdownOptions.classList.toggle('max-h-0', !dropdownIsActive);
+                dropdownOptions.classList.toggle('max-h-[200px]', dropdownIsActive);
+            });
+        });
+        
+        const numberOfProducts = document.getElementById("products");
+        let itemCount = numberOfProducts.children.length;
+        const display =  document.getElementById("productCount");
+        display.textContent = `${itemCount} items found`;
+
         fetch('/partials/headerNavBar.html')
             .then(res => res.text())
             .then(html => {
@@ -38,6 +196,16 @@
                         link.classList.remove("text-red-500");
                     }
                 }
+            });
+        fetch('/partials/footer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('footer').innerHTML = html;
+            });
+        fetch('/partials/signup.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('signup').innerHTML = html;
             });
     </script>
 </body>
