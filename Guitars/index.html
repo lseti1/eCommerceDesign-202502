@@ -185,6 +185,11 @@
             });
         });
 
+        const numberOfProducts = document.getElementById("products");
+        let itemCount = numberOfProducts.children.length;
+        const display =  document.getElementById("productCount");
+        display.textContent = `${itemCount} items found`;
+
         fetch('/partials/headerNavBar.html')
             .then(res => res.text())
             .then(html => {
