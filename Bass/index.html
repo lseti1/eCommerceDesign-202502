@@ -145,6 +145,7 @@
             </div>
         </div>
     </div>
+    <div id="cartDrawer"></div>
     <div id="signup"></div>
     <div id="footer"></div>
 
@@ -171,7 +172,11 @@
         const display =  document.getElementById("productCount");
         display.textContent = `${itemCount} items found`;
         
-
+        fetch('/partials/cartDrawer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('cartDrawer').innerHTML = html;
+            });
         fetch('/partials/headerNavBar.html')
             .then(res => res.text())
             .then(html => {
@@ -191,6 +196,30 @@
                         link.classList.remove("text-red-500");
                     }
                 }
+
+                const cartButton = document.getElementById("cart");
+                const cartDrawer = document.getElementById("cartDrawerDiv");
+                const cartExit = document.getElementById("cartDrawerExit");
+                const cartView = document.getElementById("cartWindow");
+
+                cartButton.addEventListener('click', toggleCartDrawer);
+                cartExit.addEventListener('click', toggleCartDrawer);
+                cartDrawer.addEventListener('click',  toggleCartDrawer);
+                cartView.addEventListener('click', (e) => e.stopPropagation());
+
+                function toggleCartDrawer() {
+                    cartDrawer.classList.toggle('max-w-[0%]');
+                    cartDrawer.classList.toggle('opacity-0');
+                    cartDrawer.classList.toggle('opacity-100');
+                }
+
+                const codeInputButton = document.getElementById("codeInputButton");
+                const promoCodeInput = document.getElementById("promoCodeInput");
+                
+                codeInputButton.addEventListener('click', () => {
+                    promoCodeInput.classList.toggle("hidden");
+                    codeInputButton.classList.toggle("rotate-180");
+                })
             });
         fetch('/partials/footer.html')
             .then(res => res.text())
