@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eCommerce Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <meta name="robots" content="noindex, nofollow">
+</head>
+
+<body class="w-screen bg-gray-100">
+    <div id="headerNavBar"></div>
+    <div class="w-full px-[20%] py-12 flex justify-center items-center">
+        <div class="p-8 rounded flex flex-col justify-center items-center w-[50%] text-center gap-2 bg-white border shadow">
+            <h1 class="font-semibold text-3xl py-4">Login</h1>
+            <label class="text-left font-light w-full text-xl">Email Address</label>
+            <input placeholder="Email Address" class="w-full p-2 border bg-gray-100/50"/>
+            <label class="text-left font-light w-full text-xl">Password</label>
+            <input placeholder="Password" class="w-full p-2 border bg-gray-100/50"/>
+            <a href="/Account/forgotPassword.html" class="w-full text-right font-light underline hover:text-red-500 py-4">Forgot Password?</a>
+            <button class="w-full bg-black text-white rounded p-2 hover:bg-black/70">Log In</button>
+            <div class="w-full border-t border-gray-300 pt-6 mt-6">
+                <p>Don't have an account?</p>
+                <a href="/Account/signup.html" class="w-full text-right font-light underline hover:text-red-500 py-4">Create Account Here</a>
+            </div>
+        </div>
+    </div>
+    <div id="cartDrawer"></div>
+    <div id="signup"></div>
+    <div id="footer"></div>
+
+    <script>
+        fetch('/partials/cartDrawer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('cartDrawer').innerHTML = html;
+            });
+        fetch('/partials/headerNavBar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('headerNavBar').innerHTML = html;
+
+                const currentPath = window.location.pathname;
+                console.log(currentPath);
+                const navBar = document.querySelector('#navBarItems')
+
+                for (const child of navBar.children) {
+                    const link = child.querySelector('a');
+                    if (link.getAttribute('href') == currentPath) {
+                        console.log("Match at link:", link);
+                        link.classList.add("text-red-500");
+                    }
+                    else {
+                        link.classList.remove("text-red-500");
+                    }
+                }
+
+                const cartButton = document.getElementById("cart");
+                const cartDrawer = document.getElementById("cartDrawerDiv");
+                const cartExit = document.getElementById("cartDrawerExit");
+                const cartView = document.getElementById("cartWindow");
+
+                cartButton.addEventListener('click', toggleCartDrawer);
+                cartExit.addEventListener('click', toggleCartDrawer);
+                cartDrawer.addEventListener('click',  toggleCartDrawer);
+                cartView.addEventListener('click', (e) => e.stopPropagation());
+
+                function toggleCartDrawer() {
+                    cartDrawer.classList.toggle('max-w-[0%]');
+                    cartDrawer.classList.toggle('opacity-0');
+                    cartDrawer.classList.toggle('opacity-100');
+                }
+
+                const codeInputButton = document.getElementById("codeInputButton");
+                const promoCodeInput = document.getElementById("promoCodeInput");
+                
+                codeInputButton.addEventListener('click', () => {
+                    promoCodeInput.classList.toggle("hidden");
+                    codeInputButton.classList.toggle("rotate-180");
+                })
+            });
+        fetch('/partials/footer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('footer').innerHTML = html;
+            });
+        fetch('/partials/signup.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('signup').innerHTML = html;
+            });
+    </script>
+</body>
+
+</html>
